@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Unsupervised Continual Semantic Adaptation through Neural Rendering">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unsupervised Continual Semantic Adaptation through Neural Rendering</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Unsupervised Continual Semantic Adaptation through Neural Rendering</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Asc7j9oAAAAJ&hl=en&oi=ao">Zhizheng Liu</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=qwSANZoAAAAJ&hl=en&oi=ao">Francesco Milano</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=e5uPDzcAAAAJ&hl=en&oi=ao">Jonas Frey</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://asl.ethz.ch">Roland Siegwart</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://hermannblum.net/">Hermann Blum</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://n.ethz.ch/~cesarc/">Cesar Cadena</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>shared first authorship</span>
+            <span class="author-block"><sup>1</sup>ETH Zürich</span>
+            <span class="author-block"><sup>2</sup>Max Planck ETH Center for Learning Systems</span>
+          </div>
+
+          <div class="title is-4">
+            <br/>
+            <span class="author-block">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openaccess.thecvf.com/content/CVPR2023/html/Liu_Unsupervised_Continual_Semantic_Adaptation_Through_Neural_Rendering_CVPR_2023_paper.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2211.13969"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=XfNLsl8ATNY"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ethz-asl/ucsa_neural_rendering"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.jpg" class="center">
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            An increasing amount of applications rely on data-driven models that are deployed for
+            perception tasks across a sequence of scenes. Due to the mismatch between training and
+            deployment data, adapting the model on the new scenes is often crucial to obtain good
+            performance. In this work, we study continual multi-scene adaptation for the task of
+            semantic segmentation, assuming that no ground-truth labels are available during deployment
+            and that performance on the previous scenes should be maintained. We propose training a
+            Semantic-NeRF network for each scene by fusing the predictions of a segmentation model
+            and then using the view-consistent rendered semantic labels as pseudo-labels to adapt
+            the model. Through joint training with the segmentation model, the Semantic-NeRF model
+            effectively enables 2D-3D knowledge transfer. Furthermore, due to its compact size, it
+            can be stored in a long-term memory and subsequently used to render data from arbitrary
+            viewpoints to reduce forgetting. We evaluate our approach on ScanNet, where we outperform
+            both a voxel-based baseline and a state-of-the-art unsupervised domain adaptation method.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/XfNLsl8ATNY?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{Liu2023UnsupervisedContinualSemanticAdaptationNR,
+  author    = {Liu, Zhizheng and Milano, Francesco and Frey, Jonas and Siegwart, Roland and Blum, Hermann and Cadena, Cesar},
+  title     = {Unsupervised Continual Semantic Adaptation through Neural Rendering},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

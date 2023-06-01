@@ -1,1 +1,1 @@
-# nr_semantic_segmentation
+# Unsupervised Continual Semantic Adaptation through Neural Rendering - Website
