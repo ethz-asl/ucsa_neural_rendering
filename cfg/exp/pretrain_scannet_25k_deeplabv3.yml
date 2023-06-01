@@ -1,0 +1,46 @@
+general:
+  name: scannet_25k_deeplab/pretrain
+  clean_up_folder_if_exists: True
+
+model:
+  pretrained: False
+  pretrained_backbone: True
+  num_classes: 40 # Scannet (40)
+
+lr_scheduler:
+  active: true
+  name: POLY
+  poly_cfg:
+    power: 0.9
+    max_epochs: 150
+    target_lr: 1.0e-06
+
+optimizer:
+  lr: 0.0001
+  name: Adam
+
+trainer:
+  max_epochs: 150
+  gpus: -1
+  num_sanity_val_steps: 0
+  check_val_every_n_epoch: 1
+  resume_from_checkpoint: false
+
+data_module:
+  pin_memory: true
+  batch_size: 4
+  shuffle: true
+  num_workers: 2
+  drop_last: false
+  root: data/scannet_frames_25k/scannet_frames_25k
+  data_preprocessing:
+    val_ratio: 0.2
+    image_regex: /*/color/*.jpg
+    split_file: split.npz
+
+visualizer:
+  store: true
+  store_n:
+    train: 3
+    val: 3
+    test: 3

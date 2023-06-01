@@ -1,0 +1,63 @@
+general:
+  name: finetune_nerf_train/scannet_scene0007_00
+  clean_up_folder_if_exists: True
+  checkpoint_load: "ckpts/best-epoch=143-step=175536.ckpt"
+
+model:
+  pretrained: False
+  pretrained_backbone: True
+  num_classes: 40 # Scannet (40)
+
+lr_scheduler:
+  active: false
+
+optimizer:
+  lr: 1.0e-5
+  name: Adam
+
+trainer:
+  max_epochs: 50
+  gpus: -1
+  num_sanity_val_steps: 0
+  check_val_every_n_epoch: 1
+  resume_from_checkpoint: False
+  load_from_checkpoint: True
+
+data_module:
+  pin_memory: true
+  batch_size: 4
+  shuffle: true
+  num_workers: 2
+  drop_last: false
+  root: data/scannet/scannet_frames_25k
+  train_image: nerf
+  train_label: nerf
+  data_preprocessing:
+    val_ratio: 0.2
+    image_regex: /*/color/*.jpg
+    split_file: split.npz
+    split_file_cl: split_cl.npz
+
+visualizer:
+  store: true
+  store_n:
+    train: 3
+    val: 3
+    test: 3
+
+scenes:
+  # - scene0000_00
+  # - scene0001_00
+  # - scene0002_00
+  # - scene0003_00
+  # - scene0004_00
+  # - scene0005_00
+  # - scene0006_00
+  - scene0007_00
+  # - scene0008_00
+  # - scene0009_00
+
+cl:
+ active: false
+ use_novel_viewpoints: False
+ replay_buffer_size: 0
